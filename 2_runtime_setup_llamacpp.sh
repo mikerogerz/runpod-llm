@@ -9,7 +9,7 @@ echo "Starting llama.cpp server..."
 
 # Set the model path and alias
 MODEL_PATH="${RUNPOD_LLM_MODEL_DIR}/${RUNPOD_LLM_MODEL_FILE_NAME}"
-ARGS="--embedding 1 --model ${MODEL_PATH} --model_alias ${RUNPOD_LLM_MODEL_ALIAS}"
+ARGS="--model ${MODEL_PATH} --model_alias ${RUNPOD_LLM_MODEL_ALIAS} --embedding --pooling last"
 
 # Offload all layers to GPU where possible
 ARGS="${ARGS} --n_gpu_layers -1"
