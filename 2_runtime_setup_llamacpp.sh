@@ -2,14 +2,14 @@
 
 # Install llama.cpp Python binding
 echo "Installing llama.cpp Python binding..."
-CMAKE_ARGS="-DGGML_CUDA=on -DGGML_CUDA_FA_ALL_QUANTS=ON" pip3 install --root-user-action=ignore llama-cpp-python[server]
+CMAKE_ARGS="-DGGML_CUDA=on -DGGML_CUDA_FA_ALL_QUANTS=ON" pip3 install --root-user-action=ignore "llama-cpp-python[server] @ git+https://github.com/JamePeng/llama-cpp-python.git@v0.3.17-cu130-AVX2-linux-20251209"
 
 # Start llama.cpp server
 echo "Starting llama.cpp server..."
 
 # Set the model path and alias
 MODEL_PATH="${RUNPOD_LLM_MODEL_DIR}/${RUNPOD_LLM_MODEL_FILE_NAME}"
-ARGS="--model ${MODEL_PATH} --model_alias ${RUNPOD_LLM_MODEL_ALIAS}"
+ARGS="--embedding 1 --model ${MODEL_PATH} --model_alias ${RUNPOD_LLM_MODEL_ALIAS}"
 
 # Offload all layers to GPU where possible
 ARGS="${ARGS} --n_gpu_layers -1"
