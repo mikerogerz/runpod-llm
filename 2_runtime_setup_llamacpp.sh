@@ -58,7 +58,7 @@ ARGS="${ARGS} --host 0.0.0.0 --port 11434"
 
 # Start the server
 python3 -m llama_cpp.server $ARGS > /app/runtime_llamacpp.log 2>&1 &
-sleep 10
+sleep 30
 
 if [ "$RUNPOD_LLM_SERVERLESS" = "1" ]; then
     echo "Starting the RunPod serverless handler..."
