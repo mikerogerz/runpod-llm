@@ -17,9 +17,9 @@ ARGS="${ARGS} --n_gpu_layers -1"
 # Enable flash attention: 1 = enabled, 0 = disabled
 if [ -n "${RUNPOD_LLM_FLASH_ATTENTION}" ]; then
     if [ "${RUNPOD_LLM_FLASH_ATTENTION}" = "1" ]; then
-        ARGS="${ARGS} --flash_attn True"
+        ARGS="${ARGS} --flash_attn on"
     else
-        ARGS="${ARGS} --flash_attn False"
+        ARGS="${ARGS} --flash_attn off"
     fi
 fi
 
