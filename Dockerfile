@@ -1,12 +1,10 @@
 # Use RunPod's base image to avoid manual installation
-FROM runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
-
-EXPOSE 11434
+FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
 
 # Set environment variables
 ENV PYTHONUNBUFFERED="1" \
     RUNPOD_LLM_SERVERLESS="1" \
-    RUNPOD_LLM_BACKEND="llama.cpp" \
+    RUNPOD_LLM_BACKEND="ollama" \
     RUNPOD_LLM_MODEL_DIR="/app/models" \
     RUNPOD_LLM_OLLAMA_MODEL_NAME="gemma3:12b-it-qat" \
     RUNPOD_LLM_MODEL_DOWNLOAD_URL="https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-gguf/resolve/main/gemma-3-12b-it-q4_0.gguf?download=true" \
