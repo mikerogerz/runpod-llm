@@ -1,5 +1,5 @@
 # Use RunPod's base image to avoid manual installation
-FROM runpod/pytorch:0.7.0-cu1263-torch271-ubuntu2404
+FROM runpod/pytorch:1.0.2-cu1300-torch280-ubuntu2404
 
 # Set environment variables
 ENV PYTHONUNBUFFERED="1" \
@@ -39,7 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python modules
-RUN pip3 install --root-user-action=ignore --no-cache-dir \
+RUN pip3 install --upgrade --root-user-action=ignore --no-cache-dir \
     runpod \
     requests \
     wheel
