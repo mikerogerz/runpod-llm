@@ -2,8 +2,7 @@
 
 # Install llama.cpp Python binding
 echo "Installing llama.cpp Python binding..."
-CMAKE_ARGS="-DGGML_CUDA=on -DGGML_CUDA_FA_ALL_QUANTS=ON" pip3 install --root-user-action=ignore "llama-cpp-python[server] @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.17-cu130-AVX2-linux-20251209/llama_cpp_python-0.3.17-cp312-cp312-linux_x86_64.whl" --no-cache-dir
-#CMAKE_ARGS="-DGGML_CUDA=on -DGGML_CUDA_FA_ALL_QUANTS=ON" pip3 install --root-user-action=ignore "llama-cpp-python[server] @ git+https://github.com/JamePeng/llama-cpp-python.git@v0.3.17-cu130-AVX2-linux-20251209" --no-cache-dir
+CMAKE_ARGS="-DGGML_CUDA=on -DGGML_CUDA_FA_ALL_QUANTS=ON" pip3 install --root-user-action=ignore "llama-cpp-python[server] @ git+https://github.com/JamePeng/llama-cpp-python.git" --no-cache-dir
 
 # Start llama.cpp server
 echo "Starting llama.cpp server..."
