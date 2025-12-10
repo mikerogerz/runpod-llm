@@ -1,6 +1,8 @@
 # Use RunPod's base image to avoid manual installation
 FROM runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
 
+EXPOSE 11434
+
 # Set environment variables
 ENV PYTHONUNBUFFERED="1" \
     RUNPOD_LLM_SERVERLESS="1" \
