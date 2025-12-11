@@ -41,8 +41,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install Python modules
 RUN pip3 install --root-user-action=ignore --no-cache-dir \
     runpod \
-    requests \
-    wheel
+    requests
 
 # Copy application scripts and configuration
 COPY 1_runtime_entrypoint.py \
