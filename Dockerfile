@@ -1,5 +1,5 @@
 # Use RunPod's base image to avoid manual installation
-FROM runpod/pytorch:1.0.2-cu1300-torch280-ubuntu2404
+FROM runpod/pytorch:0.7.0-cu1241-torch260-ubuntu2204
 
 # Set environment variables
 ENV PYTHONUNBUFFERED="1" \
@@ -15,7 +15,7 @@ ENV PYTHONUNBUFFERED="1" \
     OLLAMA_SCHED_SPREAD="1" \
     \
     RUNPOD_LLM_FLASH_ATTENTION="-1" \
-    RUNPOD_LLM_CONTEXT_LIMIT="2048" \
+    RUNPOD_LLM_CONTEXT_LIMIT="4096" \
     RUNPOD_LLM_CACHE_QUANTIZATION="q8_0"
 
 # Set Ollama-specific environment variables
